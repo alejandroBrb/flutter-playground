@@ -1,8 +1,9 @@
 import 'dart:async';
 
 import 'Contact.dart';
+import 'ContactRepository.dart';
 
-class MockContactRepository {
+class MockContactRepository implements ContactRepository {
   Future<List<Contact>> fetch() {
     return new Future.value(kContacts);
   }

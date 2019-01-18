@@ -6,12 +6,11 @@ import 'Contact.dart';
 import 'ContactRepository.dart';
 import 'FetchDataException.dart';
 
-class RandomUserRespository implements ContactRepository {
+class RandomContactRepository implements ContactRepository {
   
   static const _kRandomUserUrl = "http://api.randomuser.me/?results=15";
   final JsonDecoder _decoder = new JsonDecoder();
 
-  @override
   Future<List<Contact>> fetch() {
     return http.get(_kRandomUserUrl)
         .then((http.Response response) {
